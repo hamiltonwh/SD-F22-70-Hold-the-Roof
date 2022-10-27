@@ -133,7 +133,7 @@ def main():
             dist2 = t_mc[0][2]/2.54 # inches
 
 
-            newpoints = [] # yes
+            newpoints = [] # yes or no
 
 
             for i in range(5):
