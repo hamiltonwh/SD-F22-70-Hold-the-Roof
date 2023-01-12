@@ -22,11 +22,15 @@ def main():
 
     while True:
         _, img1 = cam_right.read()
+        _, img2 = cam_left.read()
 
-        img1_und = cv.undistort(img1,cameraMatrix=UndistMatrix, distCoeffs=distCoeff)
-        # print(width, height)
+        img1und = cv.undistort(img1,cameraMatrix=UndistMatrix, distCoeffs=distCoeff)
+        img2und = cv.undistort(img2,cameraMatrix=UndistMatrix, distCoeffs=distCoeff)
 
-        cv.imshow("Image 1",np.hstack([img1,img1_und]))
+        img1und[240,:] = (0, 0, 255)
+        img2und[240,:] = (0, 0, 255)
+
+        cv.imshow("Image 1",np.hstack([img1und,img2und]))
         cv.waitKey(30)
 
 
