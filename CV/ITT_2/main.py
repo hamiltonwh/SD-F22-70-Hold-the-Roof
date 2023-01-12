@@ -7,15 +7,15 @@ def main():
     camport1 = 1
     camport2 = 2
 
-    cam1 = cv.VideoCapture(camport1)
-    cam2 = cv.VideoCapture(camport2)
-    _, img1 = cam1.read()
-    _, img2 = cam2.read()
+    cam_right = cv.VideoCapture(camport1)
+    cam_left = cv.VideoCapture(camport2)
+    _, img1 = cam_right.read()
+    _, img2 = cam_left.read()
     width, height = img1.shape[1], img1.shape[0]
 
 
     while True:
-        _, img1 = cam1.read()
+        _, img1 = cam_right.read()
         print(width, height)
         cv.imshow("Image 1",img1)
         cv.waitKey(0)
