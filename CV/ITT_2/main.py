@@ -27,7 +27,7 @@ def main():
         # print(width, height)
 
         cv.imshow("Image 1",np.hstack([img1,img1_und]))
-        cv.waitKey(0)
+        cv.waitKey(30)
 
 
 
